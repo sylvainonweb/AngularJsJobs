@@ -1,0 +1,57 @@
+<div class="panel-body">
+    <form [formGroup]="form" (ngSubmit)="createJob()">
+
+        <div class="form-group col-sm-6">
+            <label for="title">Titre</label>
+            <input type="text" 
+                    name="title" 
+                    class="form-control"
+                    placeholder="Titre de votre annonce"
+                    formControlName="title">
+
+            <label for="company">Société</label>
+            <input type="text" 
+                    name="company" 
+                    class="form-control"
+                    placeholder="Société"
+                    formControlName="company">
+
+            <label for="city">Ville</label>
+            <input type="text" 
+                    name="city" 
+                    class="form-control"
+                    placeholder="Ville"
+                    formControlName="city">
+
+            <label for="zipcode">Code postal</label>
+            <input type="text" 
+                    name="zipcode" 
+                    class="form-control"
+                    placeholder="Code postal"
+                    formControlName="zipcode">
+        </div>
+
+        <div class="form-group col-sm-6">
+            <label for="description">Description</label>
+            <textarea name="description" formControlName="description" cols="30" rows="5"></textarea>
+        </div>
+
+        <div class="form-group col-sm-6">
+            <label for="contract">Type de contrat</label>
+            <select name="contract" formControlName="contract">
+                <option *ngFor="let c of contractTypes" [value]="c.value">{{c.name}}</option>
+            </select>
+        </div>
+
+        <div class="form-group col-sm-6">
+                <label for="currency">Devise</label>
+                <select name="currency" formControlName="currency">
+                    <option *ngFor="let c of currencies" [value]="c.value">{{c.name}} ({{c.symbol}})</option>
+                </select>
+            </div>
+
+        <div class="form-group col-sm-12">
+            <button type="submit" class="btn btn-success">Créer l'annonce</button>
+        </div>    
+    </form>
+</div>

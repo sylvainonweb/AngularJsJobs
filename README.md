@@ -23,6 +23,11 @@
         * <div *ngFor="let job of jobs">
             <label>Title : {{job.title}}</label>
           </div>
+        * ReactiveFormsModule : 
+            * pour générer des pages de façon dynamique
+            * FormControlName="XXX" : bind le contrôle à la propriété XXX
+            * 
+
     * Bootstrap 
         * cdn à cette url : https://www.bootstrapcdn.com/
 
