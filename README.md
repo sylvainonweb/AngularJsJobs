@@ -1,35 +1,38 @@
 # Repository github du projet 
     https://github.com/codeconcept
 
-# Lignes de commande utiles
-* création d'un projet : ng new "NomDuProjet"
-* mise à jour de npm : npm i npm
-* création d'un composant : ng g component "NomDuComposant"
-* création d'un composant : ng g service "NomDuService"
-
 # Fichiers de configuration
-    * Package.json
-        * contient notamment (dans la section scrits) les différentes commandes possibles (ng, start, build, ...) => npm start sera équivalent à ng serve
-    * Angular.json
-        * possibilité de modifier le prefixe des composants (via le tag prefix)
+* Package.json
+** contient notamment (dans la section scrits) les différentes commandes possibles (ng, start, build, ...) => npm start sera équivalent à ng serve
+* Angular.json
+** possibilité de modifier le prefixe des composants (via le tag prefix)
     => on pourra déclarer un composant comme suit : <sbcomponents-customerList></sbcomponents-customerList>
-        * Ajout de répertoires où l'application pourra aller récupérer des données (section assets) et récupération via http.get()
+** Ajout de répertoires où l'application pourra aller récupérer des données (section assets) et récupération via http.get()
 
-#Généralités
-    * Angular 
-        * prise en compte automatique des modifications
-        * attention, entre angular 4 et angular 6, le fonctionnement de rxjs a changé
-        * constructor(private http: HttpClient) : déclare la variable http en privée
-        * <div *ngFor="let job of jobs">
-            <label>Title : {{job.title}}</label>
-          </div>
-        * ReactiveFormsModule : 
-            * pour générer des pages de façon dynamique
-            * FormControlName="XXX" : bind le contrôle à la propriété XXX
-            * 
+# Angular
+## Lignes de commande utiles
+* Création d'un projet : ng new "NomDuProjet"
+* Mise à jour de npm : npm i npm
+* Création d'un composant : ng g component "NomDuComposant"
+* Création d'un service : ng g service "NomDuService"
+* Création d'un pipe : ng g pipe "NomDuPipe" (pour formater une variable. Equivalent au converter XAML)
+## Généraltés
+* prise en compte automatique des modifications
+* attention, entre angular 4 et angular 6, le fonctionnement de rxjs a changé
+* constructor(private http: HttpClient) : déclare la variable http en privée
+* <div *ngFor="let job of jobs">
+    <label>Title : {{job.title}}</label>
+  <div>
+* ReactiveFormsModule : 
+** pour générer des pages de façon dynamique
+** FormControlName="XXX" : bind le contrôle à la propriété XXX
+        
 
-    * Bootstrap 
-        * cdn à cette url : https://www.bootstrapcdn.com/
+# Bootstrap 
+* cdn à cette url : https://www.bootstrapcdn.com/
+
+
+
 
 
 
