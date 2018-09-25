@@ -1,0 +1,12 @@
+.clear {
+    background-color: white;
+    
+}
+
+.card {
+    margin-bottom: 2em;
+}
+
+.card-text {
+    padding:1em;
+}

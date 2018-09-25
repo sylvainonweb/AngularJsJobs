@@ -18,15 +18,24 @@
 * Création d'un pipe : ng g pipe "NomDuPipe" (pour formater une variable. Equivalent au converter XAML)
 ## Généraltés
 * prise en compte automatique des modifications
-* attention, entre angular 4 et angular 6, le fonctionnement de rxjs a changé
+* attention, entre angular 2/4 et angular 6, le fonctionnement de rxjs a changé
 * constructor(private http: HttpClient) : déclare la variable http en privée
-* <div *ngFor="let job of jobs">
-    <label>Title : {{job.title}}</label>
-  <div>
-* ReactiveFormsModule : 
-** pour générer des pages de façon dynamique
-** FormControlName="XXX" : bind le contrôle à la propriété XXX
-        
+* Gestion des boucles
+    <!-- <div *ngFor="let job of jobs">
+        <label>Title : {{job.title}}</label>
+    <div> -->
+* 
+## ReactiveFormsModule
+* pour générer des pages de façon dynamique
+* FormControlName="XXX" : bind le contrôle à la propriété XXX
+
+#RxJS
+* Observable : permet d'écouter un objet => import { Observable } from 'rxjs';
+* Subject = Observable + Observer        => import { Subject } from 'rxjs';
+
+#A regarder !!!
+* Object or array destructuring. Permet de récupérer les éléments d'un objet ou d'un tableau pour en reconstruire un nouveau. Possibilité de rajouter une nouvelle valeur. Ex : this.jobs = [newValue, ...this.jobs]. Les ... correspondent à la notion de destructuring array.
+
 
 # Bootstrap 
 * cdn à cette url : https://www.bootstrapcdn.com/
