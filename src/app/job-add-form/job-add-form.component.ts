@@ -26,21 +26,21 @@ export class JobAddFormComponent implements OnInit {
     ];
 
     statuses: Array<Status> = [
-        {id: 1, name: 'cadre', value: 'executive'},
-        {id: 1, name: 'employé', value: 'employee'}
+        {id: 1, name: 'Cadre', value: 'executive'},
+        {id: 1, name: 'Employé', value: 'employee'}
     ];
 
     experiences: Array<Experience> = [
-        { id: 1, name: 'junior', value: 'junior'},
-        { id: 2, name: 'medior', value: 'medior'},
-        { id: 3, name: 'senior', value: 'senior'}
+        { id: 1, name: 'Junior', value: 'junior'},
+        { id: 2, name: 'Medior', value: 'medior'},
+        { id: 3, name: 'Senior', value: 'senior'}
     ];
 
     areas: Array<Area> = [
-        {id: 1, name: 'aucun déplacements', value: 'none'},
-        {id: 2, name: 'déplacements régionaux', value: 'region'},
-        {id: 3, name: 'déplacements nationaux', value: 'nation'},
-        {id: 4, name: 'déplacements internationaux', value: 'international'}
+        {id: 1, name: 'Aucun déplacement', value: 'none'},
+        {id: 2, name: 'Déplacements régionaux', value: 'region'},
+        {id: 3, name: 'Déplacements nationaux', value: 'nation'},
+        {id: 4, name: 'Déplacements internationaux', value: 'international'}
     ];
 
   constructor(private formBuilder: FormBuilder, private jobService: JobService) { }

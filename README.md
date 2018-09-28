@@ -24,10 +24,13 @@
     <!-- <div *ngFor="let job of jobs">
         <label>Title : {{job.title}}</label>
     <div> -->
-* 
+    Entourer value avec [] si la valeur à droite du = est une variable et pas une constante =>  <option *ngFor="let c of contractTypes" [value]="c.value">{{c.name}}</option>
+* radio => input avec type="radio"
+* <label [for]='"btn-" + a.value'>{{a.value}}</label> : pour créer un libellé associé à un contrôle généré dynamiquement
 ## ReactiveFormsModule
-* pour générer des pages de façon dynamique
+* pour créer des pages où le modèle prédomine sur le template => la page restera syncrhonisée
 * FormControlName="XXX" : bind le contrôle à la propriété XXX
+* FormGroup, Validator, ... 
 
 #RxJS
 * Observable : permet d'écouter un objet => import { Observable } from 'rxjs';
