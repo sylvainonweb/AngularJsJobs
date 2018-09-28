@@ -33,8 +33,11 @@
 * FormGroup, Validator, ... 
 
 #RxJS
-* Observable : permet d'écouter un objet => import { Observable } from 'rxjs';
-* Subject = Observable + Observer        => import { Subject } from 'rxjs';
+* Observable : permet d'écouter un objet        => import { Observable } from 'rxjs';
+* Subject = permet d'informer les obversers     => import { Subject } from 'rxjs';
+
+#Routage
+* RouterModule permet de gérer le routage vers les composants en fonction de l'url saisie. Tout se passe côté client !!!
 
 #A regarder !!!
 * Object or array destructuring. Permet de récupérer les éléments d'un objet ou d'un tableau pour en reconstruire un nouveau. Possibilité de rajouter une nouvelle valeur. Ex : this.jobs = [newValue, ...this.jobs]. Les ... correspondent à la notion de destructuring array.

@@ -25,7 +25,7 @@ export class JobService {
   addJob(jobData) {
     jobData.Id = Date.now();
 
-    // Permet d'informer les "observers" qu'un nouveau job a été ajouté
+    // Les Subjects permettent d'informer les "observers" qu'un nouveau job a été ajouté
     return this.jobSubjects.next(jobData);
   }
 }
