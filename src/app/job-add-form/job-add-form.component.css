@@ -6,3 +6,20 @@
     height: 26px;
     width: 139px;
 }
+
+.descriptionTextArea {
+    vertical-align: top;
+    min-height: 8em;
+}
+
+.radioButtonLabel {
+    margin-left: 10px;
+}
+
+/* div[class^="col-"] {
+    background-color: blueviolet;
+} */
+
+/* div[class^="row"] {
+    border: 1px solid black;
+} */
