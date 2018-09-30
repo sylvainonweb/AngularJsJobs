@@ -35,6 +35,7 @@
 #RxJS
 * Observable : permet d'écouter un objet        => import { Observable } from 'rxjs';
 * Subject = permet d'informer les obversers     => import { Subject } from 'rxjs';
+* tap : fonction permettant d'effectuer un traitement avant/après une autre. Couramment utilisée pour les logs
 
 #Routage
 * RouterModule permet de gérer le routage vers les composants en fonction de l'url saisie. Tout se passe côté client !!!

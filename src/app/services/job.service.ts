@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { map } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
+import { Subject, Observable, of } from 'rxjs';
+
 
 // import { HttpClient } from '@angular/common/http';
 
@@ -10,20 +11,47 @@ import { Subject } from 'rxjs';
 })
 export class JobService {
 
+    initialJobs: Array<any> = [];
     jobs: Array<any> = [];
     jobSubjects = new Subject();
 
   constructor(private http: Http) { }
 
   getJobs() {
-      return this.http.get('src/data/jobs.json')
-        .pipe(map(res => res.json()));
+    console.log("getJobs");
+    if (this.jobs.length > 0 && this.initialJobs.length > 0) {
+        console.log("Cas 1 : offres ajoutées + offres JSON");
+        return of([...this.jobs, ...this.initialJobs]);
+    }
+    else if (this.jobs.length > 0 && this.initialJobs.length == 0) {
+        console.log("Cas 2 : offres ajoutées seulement");
+        return this.http.get('src/data/jobs.json')
+            .pipe(
+                map(res => res.json()),
+                tap(res => 
+                    {
+                        this.initialJobs = res;
+                        this.jobs = [...this.jobs, ...this.initialJobs];
+                    })
+            );        
+    }
+    else{
+        console.log("Cas 3 : offres JSON seulement");
+        return this.http.get('src/data/jobs.json')
+            .pipe(
+                map(res => res.json()),
+                tap(res => this.initialJobs = res)
+            );
+    }
+
 
     // this.httpClient.get<Array<Job>>('src/data/jobs.json');
   }
 
   addJob(jobData) {
+      
     jobData.Id = Date.now();
+    this.jobs = [jobData, ...this.jobs];
 
     // Les Subjects permettent d'informer les "observers" qu'un nouveau job a été ajouté
     return this.jobSubjects.next(jobData);
