@@ -14,6 +14,7 @@ export class JobService {
     initialJobs: Array<any> = [];
     jobs: Array<any> = [];
     jobSubjects = new Subject();
+    BASE_URL = 'http://localhost:4201';
 
   constructor(private http: Http) { }
 
@@ -25,7 +26,7 @@ export class JobService {
     }
     else if (this.jobs.length > 0 && this.initialJobs.length == 0) {
         console.log("Cas 2 : offres ajoutées seulement");
-        return this.http.get('src/data/jobs.json')
+        return this.http.get(this.BASE_URL + '/api/jobs')
             .pipe(
                 map(res => res.json()),
                 tap(res => 
@@ -37,7 +38,7 @@ export class JobService {
     }
     else{
         console.log("Cas 3 : offres JSON seulement");
-        return this.http.get('src/data/jobs.json')
+        return this.http.get(this.BASE_URL + '/api/jobs')
             .pipe(
                 map(res => res.json()),
                 tap(res => this.initialJobs = res)
