@@ -24,13 +24,13 @@ export class JobListComponent implements OnInit {
             }
         );
 
-    this.jobService.jobSubjects.subscribe(datum => {
-        console.log(datum);
-        this.jobs.push(datum);
-
-        // Voir pour utiliser la méthode array destructuring pour reconstruire un tableau en plaçant
-        // la nouvelle donnée en 1er dans le tableau
-        // this.jobs = ([datum, ...this.jobs]);
+    this.jobService.jobSubjects
+        .subscribe(datum => {
+            console.log(datum);
+            this.jobs.push(datum);
+            // Voir pour utiliser la méthode array destructuring pour reconstruire un tableau en plaçant
+            // la nouvelle donnée en 1er dans le tableau
+            // this.jobs = ([datum, ...this.jobs]);
     });
   }
 }
