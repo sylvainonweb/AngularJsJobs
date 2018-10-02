@@ -48,6 +48,11 @@
 * cdn à cette url : https://www.bootstrapcdn.com/
 
 
+#Configuration
+* npm install -g nodemon installe le serveur de façon global => si on reprend le projet sur un autre poste, il faut penser
+  à le réinstaller sinon bah le serveur ne fonctionne pas.
+
+
 
 
 
