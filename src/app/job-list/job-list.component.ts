@@ -9,8 +9,8 @@ import { JobService } from '../services/job.service';
 })
 export class JobListComponent implements OnInit {
 
-    jobs: [any];
-    error = '';
+    jobs: Array<any>;
+    error: string = '';
 
   constructor(private jobService: JobService) { }
 
@@ -27,10 +27,7 @@ export class JobListComponent implements OnInit {
     this.jobService.jobSubjects
         .subscribe(datum => {
             console.log(datum);
-            this.jobs.push(datum);
-            // Voir pour utiliser la méthode array destructuring pour reconstruire un tableau en plaçant
-            // la nouvelle donnée en 1er dans le tableau
-            // this.jobs = ([datum, ...this.jobs]);
+            this.jobs = [datum, ...this.jobs];
     });
   }
 }

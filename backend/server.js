@@ -13,6 +13,7 @@ const api = express.Router();
 
 // On définit les méthodes du service web
 api.get('/jobs', (req, res) => { 
+    console.log('api.get() appelé');
     res.json( data.jobs );
 });
 
