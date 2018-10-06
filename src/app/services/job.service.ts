@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
-//import { Http } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { map, tap } from 'rxjs/operators';
 import { Subject, Observable, of } from 'rxjs';
-
-
-// import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -28,16 +24,25 @@ export class JobService {
 
     addJob(jobData) {
 
-
         jobData.Id = Date.now();
         
         let url: string = this.BASE_URL + '/api/jobs';
-        console.log(url);
-        return this.http.post(url, jobData);
+        console.log("addJob (début)");
+
+        this.http.post<any>(url, jobData)
+            .subscribe(
+                data => {
+                    console.log("POST Request is successful ", data);
+                },
+                error => {
+                    console.log("Error", error);
+                }
+            );                   
             // map(res => 
             //     {
             //         console.log(res);
             //         this.jobSubjects.next(jobData);
             //     });
+            console.log("addJob (fin)");
     }
 }

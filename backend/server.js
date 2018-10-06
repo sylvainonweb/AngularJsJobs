@@ -13,14 +13,13 @@ const api = express.Router();
 
 // On définit les méthodes du service web
 api.get('/jobs', (req, res) => { 
-    console.log('api.get() appelé');
+    console.log('[SERVEUR] [http://localhost:' + port + '/api/jobs] [GET]');
     res.json( data.jobs );
 });
 
 api.post('/jobs', (req, res) => {
-    console.log('api.post() appelé');
-    const job = req.body;
-    console.log(job);
+    console.log('[SERVEUR] [http://localhost:' + port + '/api/jobs] [POST]');
+    res.json(data.jobs[0])
 });
 
 app.use('/api', api);
@@ -28,5 +27,5 @@ app.use('/api', api);
 // On écoute le port 4201
 const port = 4201;
 app.listen(port, () => { 
-    console.log('listening on port ${port}');
+    console.log("listening on port " + port);
 });

@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-//import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
  import { HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from './services/interceptors/index';
@@ -40,7 +39,6 @@ const routes = [
   ],
   imports: [
     BrowserModule,
-    //HttpModule,
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
