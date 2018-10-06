@@ -49,11 +49,11 @@ export class JobAddFormComponent implements OnInit {
 
     this.form = this.formBuilder.group({
         id: -1,
-        title: '',
-        company:  '',
-        city: '',
-        zipcode: 35,
-        description: '',
+        title: 'Développeur Front End',
+        company:  'Société',
+        city: 'Chalon Sur Saône',
+        zipcode: 71,
+        description: 'Description',
         contract: '',
         salary: null,
         currency: null,
@@ -70,7 +70,7 @@ export class JobAddFormComponent implements OnInit {
   createJob(jobData) {
     console.log(jobData);
     this.jobService.addJob(jobData);
-    this.router.navigate(['/jobs']);
+    //this.router.navigate(['/jobs']);
   }
 }
 

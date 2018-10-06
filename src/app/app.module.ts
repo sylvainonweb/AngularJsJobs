@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+//import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-// import { HttpClientModule } from '@angular/common/http';
+ import { HttpClientModule } from '@angular/common/http';
+import { httpInterceptorProviders } from './services/interceptors/index';
 
 import { JobService } from './services/job.service';
 import { AppComponent } from './app.component';
@@ -22,6 +23,10 @@ const routes = [
      { path: 'jobs', component: JobListComponent },
      { path: 'about', component: AboutComponent }
 ];
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,13 +40,13 @@ const routes = [
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    //HttpModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    ReactiveFormsModule
-    // HttpClientModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [JobService],
+  providers: [JobService, httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

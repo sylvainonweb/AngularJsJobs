@@ -17,6 +17,12 @@ api.get('/jobs', (req, res) => {
     res.json( data.jobs );
 });
 
+api.post('/jobs', (req, res) => {
+    console.log('api.post() appelé');
+    const job = req.body;
+    console.log(job);
+});
+
 app.use('/api', api);
 
 // On écoute le port 4201
