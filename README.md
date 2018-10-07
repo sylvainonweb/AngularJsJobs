@@ -31,9 +31,11 @@
 * pour créer des pages où le modèle prédomine sur le template => la page restera syncrhonisée
 * FormControlName="XXX" : bind le contrôle à la propriété XXX
 * FormGroup, Validator, ... 
+* Pour réinitialiser tous les champs d'un formulaire, formGroup.reset()
 
 #RxJS
 * Observable : permet d'écouter un objet        => import { Observable } from 'rxjs';
+    => attention à bien appeler subscribe sinon rien ne se passera
 * Subject = permet d'informer les obversers     => import { Subject } from 'rxjs';
 * tap : fonction permettant d'effectuer un traitement avant/après une autre. Couramment utilisée pour les logs
 

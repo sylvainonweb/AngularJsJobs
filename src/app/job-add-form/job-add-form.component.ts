@@ -68,9 +68,10 @@ export class JobAddFormComponent implements OnInit {
   }
 
   createJob(jobData) {
-    console.log(jobData);
-    this.jobService.addJob(jobData);
-    //this.router.navigate(['/jobs']);
+    this.jobService.addJob(jobData)
+        .subscribe(
+            // On retourne sur la liste des offres
+            next => this.router.navigate(['/jobs']));
   }
 }
 

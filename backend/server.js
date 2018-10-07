@@ -11,15 +11,22 @@ app.use(cors()); // Pour autoriser les appels provenant d'un autre domaine que c
 
 const api = express.Router();
 
+
+
 // On définit les méthodes du service web
-api.get('/jobs', (req, res) => { 
+api.get('/jobs', (request, response) => { 
     console.log('[SERVEUR] [http://localhost:' + port + '/api/jobs] [GET]');
-    res.json( data.jobs );
+    response.json( jobs );
 });
 
-api.post('/jobs', (req, res) => {
+var jobs = data.jobs;
+api.post('/jobs', (request, response) => {
     console.log('[SERVEUR] [http://localhost:' + port + '/api/jobs] [POST]');
-    res.json(data.jobs[0])
+    const job = request.Body;
+    // console.log(request.body);
+    jobs.push(job);
+    //jobs = [job, ...jobs];
+    response.json(job);
 });
 
 app.use('/api', api);
@@ -27,5 +34,6 @@ app.use('/api', api);
 // On écoute le port 4201
 const port = 4201;
 app.listen(port, () => { 
+    jobs = data.jobs;
     console.log("listening on port " + port);
 });
