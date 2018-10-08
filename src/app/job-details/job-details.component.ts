@@ -10,6 +10,7 @@ export class JobDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('[job-detail-component] [ngOnInit]');
   }
 
 }

@@ -46,6 +46,7 @@ export class JobAddFormComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private jobService: JobService, private router: Router) { }
   ngOnInit() {
+    console.log('[job-add-form-component] [ngOnInit]');
 
     this.form = this.formBuilder.group({
         id: -1,
@@ -68,9 +69,9 @@ export class JobAddFormComponent implements OnInit {
   }
 
   createJob(jobData) {
-    console.log(jobData);
+    console.log('[job-add-form.component] [createJob]');
     this.jobService.addJob(jobData);
-    //this.router.navigate(['/jobs']);
+    this.router.navigate(['/jobs']);
   }
 }
 

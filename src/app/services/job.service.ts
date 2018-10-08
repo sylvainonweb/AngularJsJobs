@@ -16,6 +16,8 @@ export class JobService {
     }
 
     getJobs() {
+        console.log('[job.service] [getJobs]');
+
             return this.http.get<any[]>(this.BASE_URL + '/api/jobs')
             .pipe(
                 map(res => res)
@@ -23,26 +25,14 @@ export class JobService {
     }
 
     addJob(jobData) {
+        console.log('[job.service] [addJob]');
 
         jobData.Id = Date.now();
-        
-        let url: string = this.BASE_URL + '/api/jobs';
-        console.log("addJob (début)");
-
+        const url: string = this.BASE_URL + '/api/jobs';
         this.http.post<any>(url, jobData)
-            .subscribe(
-                data => {
-                    console.log("POST Request is successful ", data);
-                },
-                error => {
-                    console.log("Error", error);
-                }
-            );                   
-            // map(res => 
-            //     {
-            //         console.log(res);
-            //         this.jobSubjects.next(jobData);
-            //     });
-            console.log("addJob (fin)");
+            .subscribe(o => {
+                    this.jobSubjects.next(jobData);
+                    console.log('[job.service] [addJob] : offre ajoutée à jobSubjects');
+                });
     }
 }
