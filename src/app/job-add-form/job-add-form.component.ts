@@ -71,6 +71,11 @@ export class JobAddFormComponent implements OnInit {
   createJob(jobData) {
     console.log('[job-add-form.component] [createJob]');
     this.jobService.addJob(jobData);
+    this.form.reset();
+  }
+
+  returnToJobs() {
+    console.log('[job-add-form.component] [returnToJobs]');
     this.router.navigate(['/jobs']);
   }
 }

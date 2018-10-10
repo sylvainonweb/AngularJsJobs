@@ -7,7 +7,12 @@ let data = require('./jobs');
 
 // On définit les middlewares (parser et api)
 app.use(bodyParser.json());
-app.use(cors()); // Pour autoriser les appels provenant d'un autre domaine que celui du serveur
+app.use(cors()); // Pour autoriser les appels provenant d'un autre domaine que celui du serveur, l'ajout à la main ne fonctionnant pas.
+// app.use((request, result, next) => {
+//     request.header('Access-Control-Allow-Origin', '*');
+//     request.header('Access-Control-Allow-Header', 'Content-Type');
+//     next();
+// });
 
 const api = express.Router();
 

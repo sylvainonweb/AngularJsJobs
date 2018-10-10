@@ -120,9 +120,18 @@
                 <input type="date" name="startdate" formControlName="startdate" class="form-control" >
             </div>
         </div>
-        <div class="row col-md-6">
-            <div class=" form-group">
-                <button type="submit" class="btn btn-success btn-raised">Créer l'annonce</button>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="row col-md-6">
+                    <div class=" form-group">
+                        <button type="submit" class="btn btn-success btn-raised">Créer l'annonce</button>
+                    </div>
+                </div>
+                <div class="row col-md-6">
+                    <div class=" form-group">
+                        <button type="button" (click)="returnToJobs()" class="btn btn-danger btn-raised">Revenir aux offres</button>
+                    </div>
+                </div>
             </div>
         </div>
     </form>

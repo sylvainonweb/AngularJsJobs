@@ -31,6 +31,8 @@
 * pour créer des pages où le modèle prédomine sur le template => la page restera syncrhonisée
 * FormControlName="XXX" : bind le contrôle à la propriété XXX
 * FormGroup, Validator, ... 
+##Boutons
+* <button type="button" (click)="returnToJobs()" => pour appeler une méthode du composant (autre que submit)
 
 #RxJS
 * Observable : permet d'écouter un objet        => import { Observable } from 'rxjs';
@@ -55,6 +57,9 @@
 
 #Extensions
 tslint : tslint.autofixonsave=true dans User Settings  pour corriger les erreurs tslint automatiquement
+
+#Sécurité
+* CORS : Cross Origin Resource Sharing. Par défaut, les navigateurs bloquent les appels à des web services situés dans un domaine différent (domaine, port) de celui du site visité. Pour l'autoriser, le serveur doit gérer les CORS. Ici, on utilse le middleware cors 'voir server.js)
 
 
 
