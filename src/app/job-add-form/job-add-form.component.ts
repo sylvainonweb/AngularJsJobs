@@ -54,7 +54,7 @@ export class JobAddFormComponent implements OnInit {
         company:  'Société',
         city: 'Chalon Sur Saône',
         zipcode: 71,
-        description: 'Description',
+        description: 'Vous êtes passioné par le développement web ? Vous connaissez Angular ? Rejoignez nous.',
         contract: '',
         salary: null,
         currency: null,
