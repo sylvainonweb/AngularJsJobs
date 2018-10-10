@@ -1,5 +1,5 @@
     <form [formGroup]="form" (ngSubmit)="createJob(form.value)">
-        <div class="row col-sm-12">
+        <div class="row col-md-12">
             <div class="form-group">
                 <label for="title" class="bmd-label-floating">Titre de l'annonce</label>
                 <input type="text" 
@@ -24,25 +24,27 @@
                         formControlName="company">
             </div>
         </div>  
-        <div class="row col-left col-md-12">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="zipcode" class="bmd-label-floating">Code postal</label>                            
-                    <input type="text" 
-                            name="zipcode" 
-                            class="form-control"
-                            formControlName="zipcode">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="city" class="bmd-label-floating">Ville</label>
+        <div class="row col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="zipcode" class="bmd-label-floating">Code postal</label>                            
                         <input type="text" 
-                        name="city" 
-                        class="form-control"
-                        formControlName="city">
-                </div>            
-            </div>                                            
+                                name="zipcode" 
+                                class="form-control"
+                                formControlName="zipcode">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="city" class="bmd-label-floating">Ville</label>
+                            <input type="text" 
+                            name="city" 
+                            class="form-control"
+                            formControlName="city">
+                    </div>            
+                </div>    
+            </div>                                        
         </div>  
 
         <div class="row col-md-12">
