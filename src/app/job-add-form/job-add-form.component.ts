@@ -51,7 +51,7 @@ export class JobAddFormComponent implements OnInit {
     this.form = this.formBuilder.group({
         id: -1,
         title: 'Développeur Front End',
-        company:  'Société',
+        company:  'DLM SOFT',
         city: 'Chalon Sur Saône',
         zipcode: 71,
         description: 'Vous êtes passioné par le développement web ? Vous connaissez Angular ? Rejoignez nous.',
@@ -63,7 +63,7 @@ export class JobAddFormComponent implements OnInit {
         status: '',
         area: '',
         field: '',
-        publishdate: new Date(),
+        publishdate: Date.now(),
         lastupdate: new Date()
     });
   }
