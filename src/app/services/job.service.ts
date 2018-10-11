@@ -8,31 +8,38 @@ import { Subject, Observable, of } from 'rxjs';
 })
 export class JobService {
 
-    jobs: Array<any> = [];
-    jobSubjects = new Subject();
+    jobSubjects = new Subject<Job>();
     BASE_URL = 'http://localhost:4201';
 
     constructor(private http: HttpClient) {
     }
 
     getJobs() {
-            return this.http.get<any[]>(this.BASE_URL + '/api/jobs');
-            // .pipe(
-            //     map(res => res)
-            // );
+        console.log('[job.service] [getJobs]');
+
+            return this.http.get<Job[]>(`${this.BASE_URL}/api/jobs`)
+            .pipe(
+                map(response => response)
+            );
     }
 
-    addJob(jobData) {
+    getJob(id: number) {
+        console.log(`[job.service] [getJob(${id})]`);
 
-        jobData.Id = Date.now();
-        
-        let url: string = this.BASE_URL + '/api/jobs';
-        return this.http.post<any>(url, jobData)
+            return this.http.get<GetJobResponse>(`${this.BASE_URL}/api/jobs/${id}`)
             .pipe(
-                tap(response => 
-                {
-                    // On prévient tous les "abonnés" qu'une nouvelle offre a éyté ajouté.
-                    this.jobSubjects.next(jobData);
-                }));
+                map(res => res)
+            );
+    }
+
+    addJob(job: Job) {
+        console.log('[job.service] [addJob]');
+
+        this.http.post<Job>(`${this.BASE_URL}/api/jobs`, job)
+            .subscribe(o => {
+                    this.jobSubjects.next(job);
+                    console.log('[job.service] [addJob] : offre ajoutée à jobSubjects');
+                });
     }
 }
+

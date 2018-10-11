@@ -19,7 +19,9 @@ export class LogInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
         const startTime = Date.now();
-        var status: string = "";
+        let status = '';
+
+        console.log(`[${request.urlWithParams}] [${request.method}] : DEBUT`);
 
         return next.handle(request)
             .pipe(
@@ -31,11 +33,10 @@ export class LogInterceptor implements HttpInterceptor {
                       }
                     },
                     error => status = 'KO'
-                  ),                
-                finalize( () => 
-                {
+                  ),
+                finalize( () => {
                     const elapsedTime = Date.now() - startTime;
-                    console.log("[CLIENT] [" + request.urlWithParams + "] [" + request.method + "] : " + elapsedTime + " ms (" + status + ")");
+                    console.log(`[${request.urlWithParams}] [${request.method}] : FIN => ${elapsedTime} ms (${status})`);
                 })
             );
     }

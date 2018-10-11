@@ -1,3 +1,7 @@
-<p>
-  job-details works!
-</p>
+<div *ngIf='jobDetail'>
+    <pre>{{jobDetail | json}}</pre>
+</div>
+
+<div *ngIf='errorMessage'>
+    Désolé, pas d'offres ayant pour id {{job.id}}
+</div>

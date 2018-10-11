@@ -1,8 +1,10 @@
 
+<div id="totalJobsText">Actuellement, <strong>{{jobs.length}} offres d'emploi</strong> sur notre site</div>
+
 <div *ngFor="let job of jobs" class="card card-warning">
     
     <div class="card-header">
-        <h3 class="card-title">{{job.title}}</h3>
+        <h3 class="card-title"><a href="#" [routerLink]="['/jobs', job.id]">{{job.title}}</a></h3>
         <div>{{job.company}} - {{job.city}} - {{job.zipcode}}</div>
     </div>
 

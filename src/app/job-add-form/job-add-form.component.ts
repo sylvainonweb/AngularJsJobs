@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class JobAddFormComponent implements OnInit {
 
     form: FormGroup;
+
     contractTypes: Array<ContractType> = [
         { id: 1, name: 'Stage', value: 'internship' },
         { id: 2, name: 'Interim', value: 'temp' },
@@ -46,14 +47,15 @@ export class JobAddFormComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private jobService: JobService, private router: Router) { }
   ngOnInit() {
+    console.log('[job-add-form-component] [ngOnInit]');
 
     this.form = this.formBuilder.group({
         id: -1,
         title: 'Développeur Front End',
-        company:  'Société',
+        company:  'DLM SOFT',
         city: 'Chalon Sur Saône',
         zipcode: 71,
-        description: 'Description',
+        description: 'Vous êtes passioné par le développement web ? Vous connaissez Angular ? Rejoignez nous.',
         contract: '',
         salary: null,
         currency: null,
@@ -62,46 +64,20 @@ export class JobAddFormComponent implements OnInit {
         status: '',
         area: '',
         field: '',
-        publishdate: new Date(),
+        publishdate: Date.now(),
         lastupdate: new Date()
     });
   }
 
   createJob(jobData) {
-    this.jobService.addJob(jobData)
-        .subscribe(
-            // On retourne sur la liste des offres
-            next => this.router.navigate(['/jobs']));
+    console.log('[job-add-form.component] [createJob]');
+    this.jobService.addJob(jobData);
+    this.form.reset();
+  }
+
+  returnToJobs() {
+    console.log('[job-add-form.component] [returnToJobs]');
+    this.router.navigate(['/jobs']);
   }
 }
 
-class ContractType {
-    id: number;
-    name: string;
-    value: string;
-}
-
-class Currency {
-    id: number;
-    name: string;
-    value: string;
-    symbol: string;
-}
-
-class Status {
-    id: number;
-    name: string;
-    value: string;
-}
-
-class Experience {
-    id: number;
-    name: string;
-    value: string;
-}
-
-class Area {
-    id: number;
-    name: string;
-    value: string;
-}

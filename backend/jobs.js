@@ -14,8 +14,8 @@ exports.jobs = [
       "status": "cadre",
       "area": "pas de déplacement",
       "field": "aéronautique",
-      "publishdate": "02/17/2018",
-      "lastupdate": "05/01/2018"
+      "publishdate": "2018/02/17",
+      "lastupdate": "2018/01/05"
     },
     {
       "id": 2,
@@ -32,43 +32,44 @@ exports.jobs = [
       "status": "employé",
       "area": "national",
       "field": "édition",
-      "publishdate": "06/04/2018",
-      "lastupdate": "06/04/2018"
-    },
-    {
-      "id": 3,
-      "title": "Développeur Angular",
-      "company": "SHT",
-      "city": "Nantes",
-      "zipcode": 44000,
-      "description": "Steak Haché Technologie cherche son expert pas cher : chez nous, le minimum c'est déjà trop. Alors envoie ton CV et tes prétentions, mais surtout le CV.",
-      "contract": "CDI",
-      "salary": 0,
-      "currency": "euros",
-      "startdate": "ASAP",
-      "experience": "junior",
-      "status": "stagiaire",
-      "area": "europe",
-      "field": "secteur d'avenir",
-      "publishdate": "05/07/2018",
-      "lastupdate": "06/04/2018"
-    },
-    {
-      "id": 4,
-      "title": "Développeur Angular",
-      "company": "Palindrome",
-      "city": "Laval",
-      "zipcode": 53000,
-      "description": "'Engage le jeu que je le gagne' : c'est ce que tu pourras déclarer si tu maîtrises React, Redux et Node. Si en plus tu sais réparer un 'radar nu' et que tu habites sur 'un roc cornu', le poste est fait pour toi. On a déménagé à Laval pour aller au bout de notre obsession. Pas de babyfoot chez nous : on fait ... du Kayak :)",
-      "contract": "CDI",
-      "salary": 0,
-      "currency": "euros",
-      "startdate": "09/01/2018",
-      "experience": "senior",
-      "status": "cadre",
-      "area": "Ouest",
-      "field": "le monde du livre",
-      "publishdate": "06/02/2018",
-      "lastupdate": "06/02/2018"
+      "publishdate": "2018/06/04",
+      "lastupdate": "2018/06/04"
     }
+    // ,
+    // {
+    //   "id": 3,
+    //   "title": "Développeur Angular",
+    //   "company": "SHT",
+    //   "city": "Nantes",
+    //   "zipcode": 44000,
+    //   "description": "Steak Haché Technologie cherche son expert pas cher : chez nous, le minimum c'est déjà trop. Alors envoie ton CV et tes prétentions, mais surtout le CV.",
+    //   "contract": "CDI",
+    //   "salary": 0,
+    //   "currency": "euros",
+    //   "startdate": "ASAP",
+    //   "experience": "junior",
+    //   "status": "stagiaire",
+    //   "area": "europe",
+    //   "field": "secteur d'avenir",
+    //   "publishdate": "05/07/2018",
+    //   "lastupdate": "06/04/2018"
+    // },
+    // {
+    //   "id": 4,
+    //   "title": "Développeur Angular",
+    //   "company": "Palindrome",
+    //   "city": "Laval",
+    //   "zipcode": 53000,
+    //   "description": "'Engage le jeu que je le gagne' : c'est ce que tu pourras déclarer si tu maîtrises React, Redux et Node. Si en plus tu sais réparer un 'radar nu' et que tu habites sur 'un roc cornu', le poste est fait pour toi. On a déménagé à Laval pour aller au bout de notre obsession. Pas de babyfoot chez nous : on fait ... du Kayak :)",
+    //   "contract": "CDI",
+    //   "salary": 0,
+    //   "currency": "euros",
+    //   "startdate": "09/01/2018",
+    //   "experience": "senior",
+    //   "status": "cadre",
+    //   "area": "Ouest",
+    //   "field": "le monde du livre",
+    //   "publishdate": "06/02/2018",
+    //   "lastupdate": "06/02/2018"
+    // }
   ]

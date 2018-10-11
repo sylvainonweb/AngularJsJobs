@@ -1,117 +1,139 @@
-<div class="container">
     <form [formGroup]="form" (ngSubmit)="createJob(form.value)">
 
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="row col-sm-12 form-group">
-                    <label for="title">Titre</label>
+        <div class="row col-md-12">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="title" >Titre de l'annonce</label>
                     <input type="text" 
-                            name="title" 
-                            class="form-control"
-                            placeholder="Titre de votre annonce"
-                            formControlName="title">
-                </div>
-                <div class="row col-sm-12 form-group">
-                    <label for="company">Société</label>
+                        name="title" 
+                        class="form-control"
+                        formControlName="title">
+                        <span class="bmd-help">Mettre un texte clair et concis.</span>
+                </div>                 
+            </div>  
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="company" >Société</label>
                     <input type="text" 
                             name="company" 
                             class="form-control"
-                            placeholder="Société"
                             formControlName="company">
-                </div>  
-                <div class="row col-sm-12 form-group">
-                    <label for="zipcode">Localisation</label>
-                    <div class="row">
-                        <div class="col-sm-6">
+                </div>
+            </div>
+        </div>
+        <div class="row col-md-12">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="description">Description </label>
+                    <textarea class="form-control descriptionTextArea" name="description" formControlName="description"></textarea>
+                </div>
+            </div>            
+            <div class="col-md-6">
+                <div class="row withoutMargin">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="zipcode" >Code postal</label>                            
                             <input type="text" 
                                     name="zipcode" 
                                     class="form-control"
-                                    placeholder="Code postal"
                                     formControlName="zipcode">
                         </div>
-                        <div class="col-sm-6">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="city" >Ville</label>
                                 <input type="text" 
                                 name="city" 
                                 class="form-control"
-                                placeholder="Ville"
                                 formControlName="city">
-                        </div>
-                    </div>                    
-                </div>                     
+                        </div>            
+                    </div>    
+                </div>   
+                <div class="row withoutMargin">
+                    <div class="col-md-6">
+                        <div class=" form-group">
+                            <label for="contract">Type de contrat </label>
+                            <select name="contract" formControlName="contract" class="form-control">
+                                <option *ngFor="let c of contractTypes" [value]="c.value">{{c.name}}</option>
+                            </select>
+                        </div>                           
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="statut">Statut</label>
+                            <select name="status" formControlName="status" class="form-control">
+                                <option *ngFor="let s of statuses" [value]="s.value">{{s.name}}</option>
+                            </select>
+                        </div>                            
+                    </div>    
+                </div>                                                                                     
             </div>
-            <div class="col-sm-6 form-group">
-                <label for="description">Description </label>
-                <textarea class="form-control descriptionTextArea" name="description" formControlName="description"></textarea>
-            </div>             
         </div>
+        <div class="row col-md-12">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="area">Déplacements</label>
+                    <div *ngFor="let a of areas">
+                        <input class="radio"
+                            type="radio"
+                            [id]='"btn-" + a.value'
+                            name="area"
+                            [value]="a.value"
+                            formControlName="area">
+                        <label [for]='"btn-" + a.value' class="radioButtonLabel">{{a.name}}</label>
+                    </div>
+                </div>            
+            </div> 
+            <div class="col-md-6">            
+                <div class="row withoutMargin">            
+                    <div class="col-md-12">                      
+                        <div class="form-group ">
+                            <label for="experience">Expérience </label>
+                            <select name="experience" formControlName="experience" class="form-control">
+                                <option *ngFor="let e of experiences" [value]="e.value">{{e.name}}</option>
+                            </select>
+                        </div>    
+                    </div>
+                </div>            
+                <div class="row withoutMargin">            
+                    <div class="col-md-6">                      
+                        <div class="form-group ">
+                            <label for="salary" >Salaire </label>
+                            <input class="form-control" formControlName="salary">  
+                        </div>    
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group ">  
+                            <label for="currency" >Devise</label>                                                  
+                            <select name="currency" class="currency" formControlName="currency" class="form-control">
+                                <option *ngFor="let c of currencies" [value]="c.value">{{c.name}} ({{c.symbol}})</option>
+                            </select>                        
+                        </div>
+                    </div>
+                </div>                                
+            </div>                             
+        </div>        
 
-        <div class="row">
-            <div class="col-sm-6 form-group">
-                <label for="contract">Type de contrat </label>
-                <select name="contract" formControlName="contract" class="form-control">
-                    <option *ngFor="let c of contractTypes" [value]="c.value">{{c.name}}</option>
-                </select>
-            </div>   
-        </div>      
-        
-        <div class="row">
-            <div class="col-sm-6 form-group">
-                <label for="salary">Salaire </label>
-                <div class="row">
-                    <div class="col-sm-7">
-                        <input class="form-control" formControlName="salary">     
-                    </div>                    
-                    <div class="col-sm-5">
-                        <select name="currency" class="currency" formControlName="currency" class="form-control">
-                            <option *ngFor="let c of currencies" [value]="c.value">{{c.name}} ({{c.symbol}})</option>
-                        </select>
+        <div class="row col-md-3">
+            <div class="col-md-12">
+                <div class="form-group ">
+                    <label for="startdate">Publiée le</label>
+                    <input type="date" name="startdate" formControlName="startdate" class="form-control" >
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class=" form-group">
+                        <button type="submit" class="btn btn-success btn-raised">Poster l'offre</button>
                     </div>
                 </div>
-            </div>   
-        </div>           
-        
-        <div class="row">
-            <div class="form-group col-sm-6">
-                <label for="experience">Expérience </label>
-                <select name="experience" formControlName="experience" class="form-control">
-                    <option *ngFor="let e of experiences" [value]="e.value">{{e.name}}</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-sm-6">
-                <label for="statut">Statut</label>
-                <select name="status" formControlName="status" class="form-control">
-                    <option *ngFor="let s of statuses" [value]="s.value">{{s.name}}</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label for="area">Déplacements</label>
-                <div *ngFor="let a of areas">
-                    <input class="checkbox"
-                        type="radio"
-                        [id]='"btn-" + a.value'
-                        name="area"
-                        [value]="a.value"
-                        formControlName="area">
-                    <label [for]='"btn-" + a.value' class="radioButtonLabel">{{a.name}}</label>
+                <div class="col-md-6">
+                    <div class=" form-group">
+                        <button type="button" (click)="returnToJobs()" class="btn btn-danger btn-raised">Revenir aux offres</button>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="form-group col-sm-6">
-                <label for="startdate">Publiée le</label>
-                <input type="date" name="startdate" formControlName="startdate" class="form-control" >
-            </div>
-        </div>
-
-        <div class="row form-group col-sm-12">
-            <button type="submit" class="btn btn-success">Créer l'annonce</button>
-        </div>    
     </form>
-</div>
