@@ -37,21 +37,4 @@ export class JobListComponent implements OnInit {
   }
 }
 
-// class Job {
-//     id: string;
-//     title: string;
-//     company:  string;
-//     city: string;
-//     zipcode: string;
-//     description: string;
-//     contract: string;
-//     salary: number;
-//     currency: number;
-//     startdate: Date;
-//     experience: string;
-//     status: string;
-//     area: string;
-//     field: string;
-//     publishdate: Date;
-//     lastupdate: Date;
-// }
+

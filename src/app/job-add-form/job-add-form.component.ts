@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class JobAddFormComponent implements OnInit {
 
     form: FormGroup;
+
     contractTypes: Array<ContractType> = [
         { id: 1, name: 'Stage', value: 'internship' },
         { id: 2, name: 'Interim', value: 'temp' },
@@ -80,33 +81,3 @@ export class JobAddFormComponent implements OnInit {
   }
 }
 
-class ContractType {
-    id: number;
-    name: string;
-    value: string;
-}
-
-class Currency {
-    id: number;
-    name: string;
-    value: string;
-    symbol: string;
-}
-
-class Status {
-    id: number;
-    name: string;
-    value: string;
-}
-
-class Experience {
-    id: number;
-    name: string;
-    value: string;
-}
-
-class Area {
-    id: number;
-    name: string;
-    value: string;
-}

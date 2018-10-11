@@ -10,3 +10,12 @@
 .card-text {
     padding:1em;
 }
+
+#totalJobsText {
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+#totalJobsText strong {
+    color: blue;   
+}
