@@ -22,13 +22,13 @@ let newJobId = 3;
 // On définit les méthodes du service web
 api.get('/jobs', (req, res) => { 
 
-    console.log('[SERVEUR] [http://localhost:' + port + '/api/jobs] [GET]');
+    console.log(`[SERVEUR] [http://localhost::${port}/api/jobs/] [GET]`);
     res.json( jobs );
 });
 
 api.get('/jobs/:id', (request, result) => { 
 
-    console.log('[SERVEUR] [http://localhost:' + port + '/api/jobs/' + request.params.id + '] [GET]');
+    console.log(`[SERVEUR] [http://localhost:${port}/api/jobs/${request.params.id}] [GET]`);
     const id = parseInt(request.params.id, 10);
     const filteredJobs = jobs.filter(o => o.id === id);
     if (filteredJobs.length == 1)
@@ -37,12 +37,12 @@ api.get('/jobs/:id', (request, result) => {
     }
     else
     {
-        return result.json({ success: false, message: 'Aucune offre trouvée ayant pour id ' + id }); 
+        return result.json({ success: false, message: `Aucune offre trouvée ayant pour id ${id}` }); 
     }
 });
 
 api.post('/jobs', (req, res) => {
-    console.log('[SERVEUR] [http://localhost:' + port + '/api/jobs] [POST]');
+    console.log(`[SERVEUR] [http://localhost:${port}/api/jobs] [POST]`);
     
     let job = req.body;
     
@@ -58,5 +58,5 @@ app.use('/api', api);
 // On écoute le port 4201
 const port = 4201;
 app.listen(port, () => { 
-    console.log("listening on port " + port);
+    console.log(`listening on port ${port}`);
 });

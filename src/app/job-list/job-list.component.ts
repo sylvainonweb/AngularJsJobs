@@ -9,7 +9,7 @@ import { JobService } from '../services/job.service';
 })
 export class JobListComponent implements OnInit {
 
-    jobs: Array<any> = [];
+    jobs: Array<Job> = [];
     error = '';
 
   constructor(private jobService: JobService) { }

@@ -10,7 +10,8 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { JobListComponent } from './job-list/job-list.component';
 import { JobAddFormComponent } from './job-add-form/job-add-form.component';
-import { DaysAgoPipe } from './pipes/days-ago.pipe';
+import { DaysAgoPipe } from './pipes/days-ago/days-ago.pipe';
+import { ToShortDatePipe } from './pipes/to-short-date/to-short-date.pipe';
 import { HomeComponent } from './home/home.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { AboutComponent } from './about/about.component';
@@ -32,7 +33,7 @@ const routes = [
     SearchComponent,
     JobListComponent,
     JobAddFormComponent,
-    DaysAgoPipe,
+    DaysAgoPipe, ToShortDatePipe,
     HomeComponent,
     JobDetailsComponent,
     AboutComponent

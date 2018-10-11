@@ -21,7 +21,7 @@ export class LogInterceptor implements HttpInterceptor {
         const startTime = Date.now();
         let status = '';
 
-        console.log('[' + request.urlWithParams + '] [' + request.method + '] : DEBUT' );
+        console.log(`[${request.urlWithParams}] [${request.method}] : DEBUT`);
 
         return next.handle(request)
             .pipe(
@@ -36,8 +36,7 @@ export class LogInterceptor implements HttpInterceptor {
                   ),
                 finalize( () => {
                     const elapsedTime = Date.now() - startTime;
-                    console.log('[' + request.urlWithParams + '] [' + request.method + '] : FIN => '
-                        + elapsedTime + ' ms (' + status + ')');
+                    console.log(`[${request.urlWithParams}] [${request.method}] : FIN => ${elapsedTime} ms (${status})`);
                 })
             );
     }

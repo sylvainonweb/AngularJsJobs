@@ -8,7 +8,7 @@ import { Subject, Observable, of } from 'rxjs';
 })
 export class JobService {
 
-    jobSubjects = new Subject();
+    jobSubjects = new Subject<Job>();
     BASE_URL = 'http://localhost:4201';
 
     constructor(private http: HttpClient) {
@@ -17,16 +17,16 @@ export class JobService {
     getJobs() {
         console.log('[job.service] [getJobs]');
 
-            return this.http.get<Job[]>(this.BASE_URL + '/api/jobs')
+            return this.http.get<Job[]>(`${this.BASE_URL}/api/jobs`)
             .pipe(
                 map(response => response)
             );
     }
 
     getJob(id: number) {
-        console.log('[job.service] [getJob(' + id + ')]');
+        console.log(`[job.service] [getJob(${id})]`);
 
-            return this.http.get<GetJobResponse>(this.BASE_URL + '/api/jobs/' + id)
+            return this.http.get<GetJobResponse>(`${this.BASE_URL}/api/jobs/${id}`)
             .pipe(
                 map(res => res)
             );
@@ -35,11 +35,11 @@ export class JobService {
     addJob(job: Job) {
         console.log('[job.service] [addJob]');
 
-        const url: string = this.BASE_URL + '/api/jobs';
-        this.http.post<Job>(url, job)
+        this.http.post<Job>(`${this.BASE_URL}/api/jobs`, job)
             .subscribe(o => {
                     this.jobSubjects.next(job);
                     console.log('[job.service] [addJob] : offre ajoutée à jobSubjects');
                 });
     }
 }
+
