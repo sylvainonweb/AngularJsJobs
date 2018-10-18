@@ -61,6 +61,10 @@ tslint : tslint.autofixonsave=true dans User Settings  pour corriger les erreurs
 #Sécurité
 * CORS : Cross Origin Resource Sharing. Par défaut, les navigateurs bloquent les appels à des web services situés dans un domaine différent (domaine, port) de celui du site visité. Pour l'autoriser, le serveur doit gérer les CORS. Ici, on utilse le middleware cors 'voir server.js)
 
+#Debuggage
+* Possibilité d'utiliser le pipe json pour afficher un objet sous forme json dans le html
+  => <div>{{MonObjet | json}}</div>
+
 
 
 

@@ -9,9 +9,9 @@ import { JobService } from '../services/job.service';
 })
 export class JobDetailsComponent implements OnInit {
 
-    private jobDetail: Job;
-    private error: string = null;
-    private errorMessage = '';
+    protected job: Job;
+    protected error: string = null;
+    protected errorMessage = '';
 
   constructor(private jobService: JobService, private activatedRoute: ActivatedRoute) { }
 
@@ -30,7 +30,7 @@ export class JobDetailsComponent implements OnInit {
 
     handleServerResponse(data: GetJobResponse) {
         if (data.success) {
-            this.jobDetail = data.job;
+            this.job = data.job;
         } else {
             this.errorMessage = data.message;
         }

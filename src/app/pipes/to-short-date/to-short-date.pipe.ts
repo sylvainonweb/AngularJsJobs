@@ -9,7 +9,7 @@ export class ToShortDatePipe implements PipeTransform {
 
     console.log(value);
 
-    if (value = 'asap') {
+    if (value === 'asap') {
       return 'Dès que possible';
     } else if (value.indexOf('-') > -1) {
       let fullDate, rest;

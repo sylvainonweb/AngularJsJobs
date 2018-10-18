@@ -17,19 +17,19 @@ export class JobService {
     getJobs() {
         console.log('[job.service] [getJobs]');
 
-            return this.http.get<Job[]>(`${this.BASE_URL}/api/jobs`)
-            .pipe(
-                map(response => response)
-            );
+        return this.http.get<Job[]>(`${this.BASE_URL}/api/jobs`)
+        .pipe(
+            map(response => response)
+        );
     }
 
     getJob(id: number) {
         console.log(`[job.service] [getJob(${id})]`);
 
-            return this.http.get<GetJobResponse>(`${this.BASE_URL}/api/jobs/${id}`)
-            .pipe(
-                map(res => res)
-            );
+        return this.http.get<GetJobResponse>(`${this.BASE_URL}/api/jobs/${id}`)
+        .pipe(
+            map(res => res)
+        );
     }
 
     addJob(job: Job) {

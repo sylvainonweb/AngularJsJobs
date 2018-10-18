@@ -8,7 +8,7 @@ class Job {
     contract: string;
     salary: number;
     currency: number;
-    startdate: Date;
+    startdate: string; // Car asap possible
     experience: string;
     status: string;
     area: string;

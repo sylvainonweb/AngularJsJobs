@@ -15,6 +15,7 @@ import { ToShortDatePipe } from './pipes/to-short-date/to-short-date.pipe';
 import { HomeComponent } from './home/home.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { AboutComponent } from './about/about.component';
+import { ToMoneySymbolPipe } from './pipes/to-money-symbol.pipe';
 
 const routes = [
      { path: '', component: HomeComponent },
@@ -30,10 +31,12 @@ const routes = [
 @NgModule({
   declarations: [
     AppComponent,
+
+    DaysAgoPipe, ToShortDatePipe, ToMoneySymbolPipe,
+
     SearchComponent,
     JobListComponent,
     JobAddFormComponent,
-    DaysAgoPipe, ToShortDatePipe,
     HomeComponent,
     JobDetailsComponent,
     AboutComponent

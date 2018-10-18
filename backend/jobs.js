@@ -14,8 +14,8 @@ exports.jobs = [
       "status": "cadre",
       "area": "pas de déplacement",
       "field": "aéronautique",
-      "publishdate": "2018/02/17",
-      "lastupdate": "2018/01/05"
+      "publishdate": "2018-02-17",
+      "lastupdate": "2018-01-05"
     },
     {
       "id": 2,
@@ -32,8 +32,8 @@ exports.jobs = [
       "status": "employé",
       "area": "national",
       "field": "édition",
-      "publishdate": "2018/06/04",
-      "lastupdate": "2018/06/04"
+      "publishdate": "2018-06-04",
+      "lastupdate": "2018-06-04"
     }
     // ,
     // {
