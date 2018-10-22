@@ -29,6 +29,8 @@ export class JobListComponent implements OnInit {
             }
         );
 
+    // Permet en cas de changement des offres d'emploi d'ajouter le nouvel élément dans la liste affichée
+    // sans récupérer tous les éléments (seulement les nouveaux) pour des problèmes de performances
     this.jobService.jobSubjects
         .subscribe(datum => {
             this.jobs = [datum, ...this.jobs];
