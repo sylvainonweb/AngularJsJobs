@@ -9,16 +9,22 @@ export class ToShortDatePipe implements PipeTransform {
 
     console.log(value);
 
-    if (value === 'asap') {
-      return 'Dès que possible';
-    } else if (value.indexOf('-') > -1) {
-      let fullDate, rest;
-      [fullDate, rest] = value.toLowerCase().split('t'); // 2018-10-11T12:45:30
+    const dateAsString: string = value;
 
-      let year, month, day;
-      [year, month, day] = fullDate.split('-');
-      return `${year}/${month}/${day}`;
-    }
+    // if (dateAsString !== undefined) {
+    //   if (dateAsString === 'asap') {
+    //     return 'Dès que possible';
+    //   } else if (dateAsString.indexOf('-') > -1) {
+    //     let fullDate, rest;
+    //     [fullDate, rest] = dateAsString.toLowerCase().split('t'); // 2018-10-11T12:45:30
+
+    //     let year, month, day;
+    //     [year, month, day] = fullDate.split('-');
+    //     return `${year}/${month}/${day}`;
+    //   }
+    // }
+
+    return dateAsString;
 
     return '';
   }
